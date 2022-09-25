@@ -89,7 +89,7 @@
 <script setup lang="ts">
 import { computed, defineProps, defineEmits } from "vue";
 
-const emit = defineEmits();
+const emit = defineEmits(["update:currentPage"]);
 
 const props = defineProps({
   total: {
@@ -124,7 +124,7 @@ function prev() {
   }
 }
 
-function setPage(v) {
+function setPage(v: number) {
   emit("update:currentPage", v);
 }
 </script>

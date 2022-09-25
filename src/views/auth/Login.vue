@@ -71,7 +71,6 @@
             @verify="markRecaptchaAsVerified"
             ref="recaptcha"
             class="recaptcha"
-            :size="900"
             :sitekey="keyRecaptcha"
           ></vue-recaptcha>
         </div>
@@ -99,19 +98,24 @@
 </template>
 
 <script setup lang="ts">
-const keyRecaptcha = "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI";
 import { onMounted, ref } from "vue";
 import * as yup from "yup";
-import { useForm, useField } from "vee-validate";
-import { useAuthStore } from "@/store/auth";
-import { VueRecaptcha } from "vue-recaptcha";
+import { useForm } from "vee-validate";
+
 import CustomInputWithValidation from "@/components/data-entry/custom-input-with-validation.vue";
 
 import { UsernamePassword } from "@/utils/type-helper";
 
 import { auth } from "@/services/core/api";
-import { saveAuthToken, saveRefreshToken } from "@/utils/auth-handler";
 import { useRouter } from "vue-router";
+
+
+import { useAuthStore } from "@/store/auth";
+import { VueRecaptcha } from "vue-recaptcha";
+
+
+const keyRecaptcha = "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI";
+
 
 const recaptchaVerified = ref(false);
 const recaptcha = ref();

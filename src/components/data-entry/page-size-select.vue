@@ -1,5 +1,5 @@
 <template>
-  <label  class="mr-4 font-sf-pro-display text-sm ">{{
+  <label class="mr-4 font-sf-pro-display text-sm">{{
     $t("actions.view")
   }}</label>
   <select
@@ -34,7 +34,7 @@
 <script setup lang="ts">
 import { computed, defineProps, defineEmits } from "vue";
 
-const emit = defineEmits();
+const emit = defineEmits(["update:pageSize"]);
 const props = defineProps({
   pageSize: {
     type: Number,
@@ -64,7 +64,7 @@ const options = [
   },
 ];
 
-function handleChange(v) {
+function handleChange(v: any) {
   emit("update:pageSize", v.target.value);
 }
 </script>

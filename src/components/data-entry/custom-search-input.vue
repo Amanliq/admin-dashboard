@@ -69,8 +69,8 @@ defineProps({
   inputValue: String,
 });
 
-const emit = defineEmits();
-function handleInput(v) {
+const emit = defineEmits(["update:inputValue"]);
+function handleInput(v: any) {
   emit("update:inputValue", v.target.value);
 }
 </script>

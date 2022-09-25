@@ -29,7 +29,14 @@ import { defineProps, toRef } from "vue";
 import { useField } from "vee-validate";
 
 const props = defineProps({
-  name: String,
+  name: {
+    type: String || undefined,
+    default: "",
+  },
+  value: {
+    type: String || undefined,
+    default: "",
+  },
 });
 const name = toRef(props, "name");
 

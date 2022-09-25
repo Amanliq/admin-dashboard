@@ -49,10 +49,7 @@
             >
               {{ sponsor[column.key] }}</span
             >
-            <button
-              v-else-if="column.key == 'actions'"
-              @click="viewItem(sponsor)"
-            >
+            <button v-else-if="column.key == 'actions'">
               <svg
                 width="24"
                 height="24"
@@ -167,19 +164,13 @@ const columns = [
 const route = useRoute();
 const router = useRouter();
 
-const queryPageSize =
-  route.query.pageSize && !isNaN(parseFloat(route.query.pageSize))
-    ? parseFloat(route.query.pageSize)
-    : 20;
-const queryPage =
-  route.query.page && !isNaN(parseFloat(route.query.page))
-    ? parseFloat(route.query.page)
-    : 1;
+const queryPageSize = (route.query?.pageSize as string) || "20";
+const queryPage = (route.query?.page as string) || "1";
 
 const list = ref([]);
 const total = ref(1);
-const page = ref(queryPage);
-const pageSize = ref(queryPageSize);
+const page = ref(parseFloat(queryPage));
+const pageSize = ref(parseFloat(queryPageSize));
 const searchValue = ref("");
 const query = computed(() => route.query);
 
@@ -218,8 +209,6 @@ function getVariant(v: string) {
   const found = statuses.find((e) => e.status == v);
   return found?.class;
 }
-
-function viewItem() {}
 
 function handleSearchValueChange(v: string) {
   searchValue.value = v;

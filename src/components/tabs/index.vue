@@ -6,13 +6,13 @@
         :class="[
           index == 0
             ? 'rounded-l-md'
-            : index === tabs.length - 1
+            : index == tabs?.length - 1
             ? 'rounded-r-md border-r-2'
             : '',
           activeTab === index ? 'bg-blue-500 text-white' : ' text-blue-500',
         ]"
         class="
-        text-xs
+          text-xs
           tracking-widest
           font-semibold
           fonr-sf-pro-display
@@ -24,7 +24,7 @@
         v-for="(tab, index) in tabs"
         :key="index"
       >
-        {{ $t(tab) }}
+        {{ $t(`${tab}`) }}
       </li>
     </ul>
   </div>
@@ -32,7 +32,7 @@
 
 <script setup lang="ts">
 import { defineEmits, defineProps } from "vue";
-const emit = defineEmits();
+const emit = defineEmits(["update:activeTab"]);
 function changeTab(tabIndex: number) {
   emit("update:activeTab", tabIndex);
 }

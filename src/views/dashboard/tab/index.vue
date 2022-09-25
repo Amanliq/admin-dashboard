@@ -41,7 +41,7 @@ const tabs: string[] = [
   "column.requirements",
 ];
 
-const activeTab = ref(1);
+const activeTab = ref();
 const searchValue = ref("");
 const spononsorsRef = ref();
 function changeTab(v: number) {
