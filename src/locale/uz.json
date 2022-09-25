@@ -1,0 +1,23 @@
+{
+    "auth": {
+        "login": "Kirish",
+        "username": "Login",
+        "password": "Parol"
+    },
+    "column": {
+        "dashboard": "Dashboard",
+        "sponsors": "Homiylar",
+        "requirements": "Talablar",
+        "fio": "F.I.SH",
+        "phone": "Tel.Raqami",
+        "sponsorship_amount": "Homiylik summasi",
+        "amount_spent": "Sarflangan summa",
+        "date": "Sana",
+        "status": "Holati",
+        "title": "Amallar"
+    },
+    "actions": {
+        "search": "Izlash",
+        "filter": "Filter"
+    }
+}

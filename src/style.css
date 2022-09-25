@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* SFPRODISPLAYMEDIUM */
+@font-face {
+  font-family: 'SFPRODISPLAYMEDIUM';
+  src: url('./assets/fonts/sf-pro-display-cufonfonts/SFPRODISPLAYMEDIUM.OTF')format('opentype');
+}
+
+/* SFPRODISPLAYBLACKITALIC */
+@font-face {
+  font-family: 'SFPRODISPLAYBLACKITALIC';
+  src: url('./assets/fonts/sf-pro-display-cufonfonts/SFPRODISPLAYBLACKITALIC.OTF')format('opentype');
+}
+
+
+/* SFPRODISPLAYBOLD */
+@font-face {
+  font-family: 'SFPRODISPLAYBOLD';
+  src: url('./assets/fonts/sf-pro-display-cufonfonts/SFPRODISPLAYBOLD.OTF')format('opentype');
+}
+
+/* SFPRODISPLAYHEAVYITALIC */
+@font-face {
+  font-family: 'SFPRODISPLAYHEAVYITALIC';
+  src: url('./assets/fonts/sf-pro-display-cufonfonts/SFPRODISPLAYHEAVYITALIC.OTF')format('opentype');
+}
+
+
+
+/* SFPRODISPLAYLIGHTITALIC */
+@font-face {
+  font-family: 'SFPRODISPLAYLIGHTITALIC';
+  src: url('./assets/fonts/sf-pro-display-cufonfonts/SFPRODISPLAYLIGHTITALIC.OTF')format('opentype');
+}
+
+/* SFPRODISPLAYREGULAR */
+@font-face {
+  font-family: 'SFPRODISPLAYREGULAR';
+  src: url('./assets/fonts/sf-pro-display-cufonfonts/SFPRODISPLAYREGULAR.OTF')format('opentype');
+}
+
+
+/* SFPRODISPLAYSEMIBOLDITALIC */
+@font-face {
+  font-family: 'SFPRODISPLAYSEMIBOLDITALIC';
+  src: url('./assets/fonts/sf-pro-display-cufonfonts/SFPRODISPLAYSEMIBOLDITALIC.OTF')format('opentype');
+}
+
+
+
+/* SFPRODISPLAYTHINITALIC */
+@font-face {
+  font-family: 'SFPRODISPLAYTHINITALIC';
+  src: url('./assets/fonts/sf-pro-display-cufonfonts/SFPRODISPLAYTHINITALIC.OTF')format('opentype');
+}
+
+/* SFPRODISPLAYULTRALIGHTITALIC */
+@font-face {
+  font-family: 'SFPRODISPLAYULTRALIGHTITALIC';
+  src: url('./assets/fonts/sf-pro-display-cufonfonts/SFPRODISPLAYULTRALIGHTITALIC.OTF')format('opentype');
+}
