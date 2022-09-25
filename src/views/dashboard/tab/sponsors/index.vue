@@ -224,6 +224,13 @@ watch(searchValue, (v) => {
   getSponsors();
 });
 
+watch(pageSize, (v) => {
+    addQuery({
+    pageSize: v,
+  });
+  getSponsors();
+});
+
 onMounted(() => {
   getSponsors();
 });

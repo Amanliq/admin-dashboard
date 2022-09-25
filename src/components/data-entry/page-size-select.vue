@@ -20,6 +20,7 @@
       dark:focus:ring-blue-500
       dark:focus:border-blue-500
     "
+    @change="handleChange"
   >
     <option
       :value="option.value"

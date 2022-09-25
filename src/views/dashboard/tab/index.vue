@@ -13,7 +13,10 @@
   >
     <div class="container overflow-auto">
       <div class="flex items-center justify-between">
+      
         <Tabs v-model:activeTab="activeTab" :tabs="tabs" />
+
+        
         <div class="flex items-center">
           <CustomSearchInput v-model:inputValue="searchValue" />
           <CustomFilterButton @click="showFilterModal" />
@@ -41,7 +44,7 @@ const tabs: string[] = [
   "column.requirements",
 ];
 
-const activeTab = ref();
+const activeTab = ref(1);
 const searchValue = ref("");
 const spononsorsRef = ref();
 function changeTab(v: number) {
