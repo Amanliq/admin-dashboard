@@ -77,8 +77,18 @@
       </tbody>
     </table>
     <div class="flex items-center justify-between">
-      <div></div>
       <div>
+        <p class="font-sf-pro-display font-semibold">
+          {{
+            $t("column.view_count", {
+              count: `${page}-${pageSize}`,
+              total: total,
+            })
+          }}
+        </p>
+      </div>
+      <div class="flex items-center">
+        <PageSizeSelect class="mr-4" v-model:pageSize="pageSize" />
         <Pagination
           :total="total"
           :pageSize="pageSize"
@@ -93,6 +103,7 @@
 import { sponsor } from "@/services/core/api";
 import { computed, onMounted, ref, watch, defineExpose } from "vue";
 import Pagination from "@/components/pagination/index.vue";
+import PageSizeSelect from "@/components/data-entry/page-size-select.vue";
 import { useRoute, useRouter } from "vue-router";
 import numeral from "numeral";
 import dayjs from "dayjs";

@@ -24,7 +24,7 @@
   </p>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { defineProps, toRef } from "vue";
 import { useField } from "vee-validate";
 

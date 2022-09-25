@@ -14,10 +14,12 @@
         "amount_spent": "Sarflangan summa",
         "date": "Sana",
         "status": "Holati",
-        "title": "Amallar"
+        "title": "Amallar",
+        "view_count": "{total} tadan  {count} ko‘rsatilmoqda"
     },
     "actions": {
         "search": "Izlash",
-        "filter": "Filter"
+        "filter": "Filter",
+        "view": "Ko'rsatish"
     }
 }

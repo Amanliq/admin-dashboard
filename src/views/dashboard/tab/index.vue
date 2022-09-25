@@ -23,7 +23,7 @@
   </div>
 
   <div class="bg-gray-100 py-10 min-h-screen">
-    <Sponsors ref="spononsorsRef" />
+    <Sponsors ref="spononsorsRef" v-if="activeTab == 1" />
   </div>
 </template>
 
@@ -41,7 +41,7 @@ const tabs: string[] = [
   "column.requirements",
 ];
 
-const activeTab = ref(0);
+const activeTab = ref(1);
 const searchValue = ref("");
 const spononsorsRef = ref();
 function changeTab(v: number) {
