@@ -32,6 +32,7 @@
         pb-8
         shadow-md
         sm:mx-auto sm:max-w-md sm:w-full sm:rounded-2xl sm:px-10
+        px-5
       "
     >
       <div class="leading-7 text-gray-600 text-base">
@@ -40,7 +41,8 @@
             font-sf-pro-display
             flex
             items-center
-            text-3xl
+            lg:text-3xl
+            text-2xl
             font-bold
             text-gray-900
           "
@@ -70,7 +72,7 @@
           <vue-recaptcha
             @verify="markRecaptchaAsVerified"
             ref="recaptcha"
-            class="recaptcha"
+            class="lg:scale-120 sm:scale-150  origin-[0_0] scale-120"
             :sitekey="keyRecaptcha"
           ></vue-recaptcha>
         </div>
@@ -109,13 +111,10 @@ import { UsernamePassword } from "@/utils/type-helper";
 import { auth } from "@/services/core/api";
 import { useRouter } from "vue-router";
 
-
 import { useAuthStore } from "@/store/auth";
 import { VueRecaptcha } from "vue-recaptcha";
 
-
 const keyRecaptcha = "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI";
-
 
 const recaptchaVerified = ref(false);
 const recaptcha = ref();
@@ -160,8 +159,5 @@ onMounted(() => {
 </script>
 
 <style lang="scss">
-.recaptcha {
-  transform: scale(1.2) !important;
-  transform-origin: 0 0 !important;
-}
+
 </style>

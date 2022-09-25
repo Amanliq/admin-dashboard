@@ -12,13 +12,13 @@
     "
   >
     <div class="container overflow-auto">
-      <div class="flex items-center justify-between">
+      <div class="flex flex-col xl:flex-row items-center justify-between">
       
         <Tabs v-model:activeTab="activeTab" :tabs="tabs" />
 
         
-        <div class="flex items-center">
-          <CustomSearchInput v-model:inputValue="searchValue" />
+        <div class="flex items-center flex-col justify-start lg:flex-row">
+          <CustomSearchInput class="my-5 xl:m-0" v-model:inputValue="searchValue" />
           <CustomFilterButton @click="showFilterModal" />
         </div>
       </div>

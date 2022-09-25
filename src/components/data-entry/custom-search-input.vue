@@ -47,7 +47,7 @@
       :value="inputValue"
       @input="handleInput"
       class="
-        w-72
+        lg:w-72
         block
         text-xs
         p-3

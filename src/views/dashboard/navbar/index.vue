@@ -1,9 +1,9 @@
 <template>
   <nav class="py-3 overflow-auto">
     <div class="container">
-      <div class="flex items-center justify-between">
-        <img width="250" src="@/assets/logo.png" alt="" />
-        <div class="flex items-center">
+      <div class="flex flex-col lg:flex-row items-center justify-between">
+        <img width="250" class="mb-5 lg:mb-0" src="@/assets/logo.png" alt="" />
+        <div class="flex lg:flex-row flex-col items-center">
           <div class="flex py-2 px-2 rounded-md bg-gray-100">
             <p class="font-bold font-sf-pro-display">username</p>
             <div class="ml-3 rounded-md pl-1 pt-2 pr-1 bg-green-600">
@@ -11,7 +11,7 @@
             </div>
           </div>
 
-          <div class="ml-10">
+          <div class="lg:ml-10">
             <img
               width="30"
               @click="logout"

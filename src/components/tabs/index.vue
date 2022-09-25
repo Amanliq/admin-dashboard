@@ -1,6 +1,6 @@
 <template>
   <div class="tabs">
-    <ul class="flex flex-wrap cursor-pointer">
+    <ul class="flex lg:flex-row flex-col cursor-pointer">
       <li
         @click="changeTab(index)"
         :class="[

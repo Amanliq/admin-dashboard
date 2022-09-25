@@ -7,9 +7,15 @@ module.exports = {
   theme: {
     container: {
       center: true,
-      padding:"5rem"
+      padding: "5rem"
     },
-    extend: {},
+    extend: {
+      scale: {
+        '120': '1.20',
+        '108': '1.08',
+        '150':'1.50'
+      }
+    },
     fontFamily: {
       'sf-pro-display': ['SFPRODISPLAYREGULAR',
         'SFPRODISPLAYMEDIUM', 'SFPRODISPLAYBLACKITALIC',
@@ -20,6 +26,6 @@ module.exports = {
   },
   plugins: [],
   corePlugins: {
-  tableLayout: true,
+    tableLayout: true,
   }
 }

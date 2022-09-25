@@ -2,7 +2,7 @@
   <button
     class="
       rounded-md
-      ml-5
+      lg:ml-5
       flex
       items-center
       bg-blue-50
