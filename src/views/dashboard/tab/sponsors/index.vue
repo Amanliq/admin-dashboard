@@ -166,7 +166,6 @@ const router = useRouter();
 
 const queryPageSize = (route.query?.pageSize as string) || "20";
 const queryPage = (route.query?.page as string) || "1";
-
 const list = ref([]);
 const total = ref(1);
 const page = ref(parseFloat(queryPage));

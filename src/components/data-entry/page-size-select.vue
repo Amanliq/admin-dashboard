@@ -20,6 +20,7 @@
       dark:focus:ring-blue-500
       dark:focus:border-blue-500
     "
+    :value="pageSize"
     @change="handleChange"
   >
     <option
@@ -64,6 +65,7 @@ const options = [
     label: "500",
   },
 ];
+
 
 function handleChange(v: any) {
   emit("update:pageSize", v.target.value);
