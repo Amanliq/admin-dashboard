@@ -1,11 +1,11 @@
 
 import Dashboard from "@/views/dashboard/index.vue"
 import Sponsors from "@/views/dashboard/tab/sponsors/index.vue"
-
+import Requirements from "@/views/dashboard/tab/requirements/index.vue"
 export const dashboardRoutes = [
     {
         path: "/",
-        redirect: "/dashboard",
+        redirect: "/sponsors",
         name: "Home",
         children: [
             {
@@ -16,6 +16,15 @@ export const dashboardRoutes = [
                     layout: "DashboardLayout"
                 }
             },
+            {
+                name: "Requirements",
+                component: Requirements,
+                path: "/requirements",
+                meta: {
+                    layout: "DashboardLayout"
+                }
+            },
+
             {
                 name: "Sponsors",
                 component: Sponsors,

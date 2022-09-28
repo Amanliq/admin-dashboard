@@ -33,6 +33,7 @@
 </template>
 
 <script setup lang="ts">
+import { PropType } from "vue";
 import { TabInterface } from "@/utils/type-helper";
 import { defineEmits, defineProps } from "vue";
 import { useRouter } from "vue-router";
@@ -45,7 +46,7 @@ function changeTab(tab: TabInterface) {
 
 defineProps({
   tabs: {
-    type: Array,
+    type: Array as PropType<TabInterface[]>,
     default: () => [],
   },
   activeTab: {

@@ -31,7 +31,7 @@
       </svg>
     </div>
     <div
-      @click="page !== '...' ? setPage(page) : null"
+      @click="setPage(page)"
       :class="[page === currentPage ? 'border-blue-500' : '']"
       class="
         w-9
@@ -140,7 +140,10 @@ function prev() {
   }
 }
 
-function setPage(v: number) {
+function setPage(v: number | string) {
+  if(typeof v == 'string') {
+    return
+  }
   emit("update:currentPage", v);
 }
 </script>

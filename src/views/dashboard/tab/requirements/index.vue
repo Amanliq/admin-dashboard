@@ -1,13 +1,9 @@
 <template>
-  <h1>Requirements</h1>
+  <h1></h1>
 </template>
 
-<script>
-export default {
-
-}
+<script setup lang="ts">
 </script>
 
 <style>
-
 </style>
