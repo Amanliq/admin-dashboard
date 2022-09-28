@@ -34,6 +34,9 @@ import CustomFilterButton from "@/components/buttons/custom-filter-button.vue";
 import Tabs from "@/components/tabs/index.vue";
 import { watch } from "vue";
 import { TabInterface } from "@/utils/type-helper";
+import { useSponsorsStore } from "@/store/dashboard/sponsors/index";
+
+const { setSearchValue } = useSponsorsStore();
 
 const tabs: TabInterface[] = [
   {
@@ -60,7 +63,7 @@ function changeTab(v: number) {
 function showFilterModal() {}
 
 watch(searchValue, (v) => {
-  spononsorsRef.value.handleSearchValueChange(v);
+  setSearchValue(v);
 });
 </script>
 

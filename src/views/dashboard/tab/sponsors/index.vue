@@ -97,6 +97,7 @@
 </template>
 
 <script lang="ts" setup>
+import { useSponsorsStore } from "@/store/dashboard/sponsors/index";
 import { sponsor } from "@/services/core/api";
 import { computed, onMounted, ref, watch, defineExpose } from "vue";
 import Pagination from "@/components/pagination/index.vue";
@@ -105,6 +106,7 @@ import { useRoute, useRouter } from "vue-router";
 import numeral from "numeral";
 import dayjs from "dayjs";
 
+import { storeToRefs } from "pinia";
 const statuses = [
   {
     status: "Yangi",
@@ -161,6 +163,8 @@ const columns = [
   },
 ];
 
+const { search } = storeToRefs(useSponsorsStore());
+
 const route = useRoute();
 const router = useRouter();
 
@@ -212,6 +216,11 @@ function getVariant(v: string) {
 function handleSearchValueChange(v: string) {
   searchValue.value = v;
 }
+
+watch(search, (v) => {
+  handleSearchValueChange(v);
+});
+
 watch(page, (v) => {
   addQuery({
     page: v,
