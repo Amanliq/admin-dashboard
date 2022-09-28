@@ -8,6 +8,14 @@ import { getAuthToken } from "@/utils/auth-handler"
 import { authRoutes } from "./auth/login"
 import { dashboardRoutes } from "./dashboard/dashboard"
 const routes = [
+    {
+        path: "/",
+        redirect: "/sponsors",
+        name: "Home",
+        meta: {
+            layout: "DashboardLayout"
+        }
+    },
     ...dashboardRoutes,
     ...authRoutes,
 ]
