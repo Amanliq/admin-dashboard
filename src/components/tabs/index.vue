@@ -2,14 +2,16 @@
   <div class="tabs">
     <ul class="flex lg:flex-row flex-col cursor-pointer">
       <li
-        @click="changeTab(index)"
+        @click="changeTab(tab)"
         :class="[
           index == 0
             ? 'rounded-l-md'
             : index == tabs?.length - 1
             ? 'rounded-r-md border-r-2'
             : '',
-          activeTab === index ? 'bg-blue-500 text-white' : ' text-blue-500',
+          tab.link === $route.name
+            ? 'bg-blue-500 text-white'
+            : ' text-blue-500',
         ]"
         class="
           text-xs
@@ -24,17 +26,21 @@
         v-for="(tab, index) in tabs"
         :key="index"
       >
-        {{ $t(`${tab}`) }}
+        {{ $t(`${tab.label}`) }}
       </li>
     </ul>
   </div>
 </template>
 
 <script setup lang="ts">
+import { TabInterface } from "@/utils/type-helper";
 import { defineEmits, defineProps } from "vue";
+import { useRouter } from "vue-router";
 const emit = defineEmits(["update:activeTab"]);
-function changeTab(tabIndex: number) {
-  emit("update:activeTab", tabIndex);
+
+const router = useRouter();
+function changeTab(tab: TabInterface) {
+  router.push({ name: tab.link });
 }
 
 defineProps({

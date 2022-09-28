@@ -8,7 +8,8 @@ export const authRoutes = [
         name: "Login",
         meta: {
             public: true,
-            onlyWhenLoggedOut: true
+            onlyWhenLoggedOut: true,
+            layout: "BlankLayout"
         }
     }
 ]

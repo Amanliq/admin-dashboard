@@ -13,20 +13,17 @@
   >
     <div class="container overflow-auto">
       <div class="flex flex-col xl:flex-row items-center justify-between">
-      
         <Tabs v-model:activeTab="activeTab" :tabs="tabs" />
 
-        
         <div class="flex items-center flex-col justify-start lg:flex-row">
-          <CustomSearchInput class="my-5 xl:m-0" v-model:inputValue="searchValue" />
+          <CustomSearchInput
+            class="my-5 xl:m-0"
+            v-model:inputValue="searchValue"
+          />
           <CustomFilterButton @click="showFilterModal" />
         </div>
       </div>
     </div>
-  </div>
-
-  <div class="bg-gray-100 py-10 min-h-screen">
-    <Sponsors ref="spononsorsRef" v-if="activeTab == 1" />
   </div>
 </template>
 
@@ -35,13 +32,22 @@ import { ref } from "vue";
 import CustomSearchInput from "@/components/data-entry/custom-search-input.vue";
 import CustomFilterButton from "@/components/buttons/custom-filter-button.vue";
 import Tabs from "@/components/tabs/index.vue";
-import Sponsors from "@/views/dashboard/tab/sponsors/index.vue";
 import { watch } from "vue";
+import { TabInterface } from "@/utils/type-helper";
 
-const tabs: string[] = [
-  "column.dashboard",
-  "column.sponsors",
-  "column.requirements",
+const tabs: TabInterface[] = [
+  {
+    label: "column.dashboard",
+    link: "Dashboard",
+  },
+  {
+    label: "column.sponsors",
+    link: "Sponsors",
+  },
+  {
+    label: "column.requirements",
+    link: "Requirements",
+  },
 ];
 
 const activeTab = ref(1);

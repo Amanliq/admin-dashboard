@@ -31,8 +31,7 @@
       </svg>
     </div>
     <div
-      v-show="showPaginationLength >= page"
-      @click="setPage(page)"
+      @click="page !== '...' ? setPage(page) : null"
       :class="[page === currentPage ? 'border-blue-500' : '']"
       class="
         w-9
@@ -47,7 +46,7 @@
         bg-white
         rounded-md
       "
-      v-for="page in pageTotal"
+      v-for="page in pagePagination"
       :key="page + '-page'"
     >
       {{ page }}
@@ -104,13 +103,30 @@ const props = defineProps({
     type: Number,
     default: 20,
   },
-  showPaginationLength: {
-    type: Number,
-    default: 5,
-  },
 });
 
 const pageTotal = computed(() => Math.ceil(props.total / props.pageSize));
+
+const pagePagination = computed(() => {
+  if (pageTotal.value > 3) {
+    if (
+      props.currentPage != pageTotal.value &&
+      props.currentPage != pageTotal.value - 1
+    ) {
+      return [
+        props.currentPage,
+        props.currentPage + 1,
+        "...",
+        pageTotal.value - 1,
+        pageTotal.value,
+      ];
+    } else {
+      return [1, 2, "...", pageTotal.value - 1, pageTotal.value];
+    }
+  } else {
+    return pageTotal.value;
+  }
+});
 
 function next() {
   if (props.currentPage !== pageTotal.value) {
