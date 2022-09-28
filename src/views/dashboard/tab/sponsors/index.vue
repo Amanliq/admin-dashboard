@@ -215,6 +215,7 @@ function handleSearchValueChange(v: string) {
 watch(page, (v) => {
   addQuery({
     page: v,
+    pageSize: pageSize.value,
   });
   getSponsors();
 });
@@ -224,10 +225,14 @@ watch(searchValue, (v) => {
 });
 
 watch(pageSize, (v) => {
+  if (page.value == 1) {
     addQuery({
-    pageSize: v,
-  });
-  getSponsors();
+      pageSize: v,
+    });
+    getSponsors();
+  } else {
+    page.value = 1;
+  }
 });
 
 onMounted(() => {

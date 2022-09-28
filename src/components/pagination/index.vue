@@ -114,8 +114,8 @@ const pagePagination = computed(() => {
       props.currentPage != pageTotal.value - 1
     ) {
       return [
-        props.currentPage,
-        props.currentPage + 1,
+        props.currentPage === 1 ? 1 : props.currentPage - 1,
+        props.currentPage === 1 ? props.currentPage + 1 : props.currentPage,
         "...",
         pageTotal.value - 1,
         pageTotal.value,
@@ -141,8 +141,8 @@ function prev() {
 }
 
 function setPage(v: number | string) {
-  if(typeof v == 'string') {
-    return
+  if (typeof v == "string") {
+    return;
   }
   emit("update:currentPage", v);
 }
